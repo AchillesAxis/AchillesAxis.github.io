@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -7,6 +8,7 @@
     <title>Over Achilles</title>
 
     <style>
+        /* Algemene instellingen */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,6 +22,7 @@
             min-height: 100vh;
         }
 
+        /* De bovenkant van de website */
         header {
             text-align: center;
             padding: 80px 20px 50px;
@@ -34,12 +37,14 @@
             font-size: 22px;
         }
 
+        /* De inhoud van de website */
         .container {
             max-width: 900px;
             margin: auto;
             padding: 20px;
         }
 
+        /* Witte informatieblokken */
         .card {
             background: white;
             color: #222;
@@ -54,6 +59,43 @@
             margin-bottom: 15px;
         }
 
+        /* De knop bij Over mij */
+        .meer-info-knop {
+            background: #4b55c5;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .meer-info-knop:hover {
+            background: #343d9b;
+        }
+
+        /* Extra informatie die eerst verborgen is */
+        .extra-info {
+            display: none;
+            background: #f1f3ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        .extra-info h3 {
+            color: #4b55c5;
+            margin-bottom: 10px;
+        }
+
+        .extra-info p {
+            margin-bottom: 10px;
+        }
+
+        /* De drie informatievakjes */
         .info {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -72,12 +114,14 @@
             margin-bottom: 10px;
         }
 
+        /* De onderkant van de website */
         footer {
             text-align: center;
             padding: 40px 20px;
             font-size: 15px;
         }
 
+        /* Aanpassing voor telefoons */
         @media (max-width: 700px) {
             header h1 {
                 font-size: 42px;
@@ -92,23 +136,62 @@
 
 <body>
 
+    <!-- Titel en introductie -->
     <header>
         <h1>Hoi, ik ben Achilles 👋</h1>
         <p>Welkom op mijn persoonlijke website!</p>
     </header>
 
-    <div class="container">
+    <main class="container">
 
-        <div class="card">
+        <!-- Over mij met een klikbare knop -->
+        <section class="card">
             <h2>Over mij</h2>
+
             <p>
                 Mijn naam is <strong>Achilles</strong>. Ik ben 15 jaar oud
                 en dit is mijn persoonlijke website. Hier kun je wat
                 informatie over mij vinden.
             </p>
-        </div>
 
-        <div class="card">
+            <!-- Deze knop toont of verbergt extra informatie -->
+            <button
+                class="meer-info-knop"
+                onclick="toonInfo()"
+                aria-expanded="false"
+                aria-controls="extraInfo"
+                id="infoKnop">
+                Lees meer over mij
+            </button>
+
+            <!-- Dit blok verschijnt als je op de knop klikt -->
+            <div class="extra-info" id="extraInfo">
+                <h3>Meer over Achilles</h3>
+
+                <p>
+                    Ik zit op het Vlietlandcollege en leer hoe ik
+                    websites kan maken met HTML en CSS.
+                </p>
+
+                <p>
+                    <strong>Mijn hobby's:</strong>
+                    Hier kun je je eigen hobby's invullen.
+                </p>
+
+                <p>
+                    <strong>Mijn interesses:</strong>
+                    Hier kun je vertellen wat je leuk vindt.
+                </p>
+
+                <p>
+                    <strong>Mijn toekomst:</strong>
+                    Hier kun je vertellen wat je later wilt worden.
+                </p>
+            </div>
+        </section>
+
+        <!-- Persoonlijke gegevens -->
+        <section class="card">
             <h2>Mijn informatie</h2>
 
             <div class="info">
@@ -129,22 +212,44 @@
                 </div>
 
             </div>
-        </div>
+        </section>
 
-        <div class="card">
+        <!-- Informatie over de website -->
+        <section class="card">
             <h2>Over deze website</h2>
+
             <p>
                 Ik heb deze website gemaakt met HTML en CSS.
                 Op deze website vertel ik iets over mezelf en leer ik
                 ondertussen meer over websites maken.
             </p>
-        </div>
+        </section>
 
-    </div>
+    </main>
 
+    <!-- Onderaan de website -->
     <footer>
         © 2026 Achilles - Mijn persoonlijke website
     </footer>
+
+    <!-- JavaScript maakt de knop interactief -->
+    <script>
+        // Deze functie toont of verbergt de extra informatie.
+        function toonInfo() {
+            const info = document.getElementById("extraInfo");
+            const knop = document.getElementById("infoKnop");
+
+            if (info.style.display === "block") {
+                info.style.display = "none";
+                knop.textContent = "Lees meer over mij";
+                knop.setAttribute("aria-expanded", "false");
+            } else {
+                info.style.display = "block";
+                knop.textContent = "Toon minder";
+                knop.setAttribute("aria-expanded", "true");
+            }
+        }
+    </script>
 
 </body>
 </html>
