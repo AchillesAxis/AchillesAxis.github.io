@@ -211,4 +211,11 @@ body.dark {
         padding: 28px 16px;
     }
 }
-```
+#binair h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#binair h2 a:hover {
+  text-decoration: underline;
+}
