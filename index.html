@@ -9,61 +9,86 @@
 </head>
 <body>
 
+  <!-- Navigatiebalk -->
   <header class="navbar">
-    <a href="#" class="logo">it's<br><span>her.</span></a>
 
-    <nav>
-      <a href="#home">Home</a>
+    <a href="#home" class="logo">
+      <span>it's</span>
+      <strong>her.</strong>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#about">About Me</a>
       <a href="#contact">Kontakt</a>
     </nav>
 
-    <a href="#contact" class="contact-button">Say Hei!</a>
-  </header>
-
-  <main class="hero" id="home">
-
-    <div class="photo-placeholder">
-      <span>Jouw foto komt hier</span>
+    <div class="nav-right">
+      <a href="#contact" class="say-button">Say Hei!</a>
+      <a href="#contact" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="5"/>
+          <circle cx="12" cy="12" r="3.5"/>
+          <circle cx="17.5" cy="6.8" r="0.8" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
     </div>
 
-    <section class="hero-content">
-      <div>
-        <p class="eyebrow">PORTFOLIO · PHOTOGRAPHY</p>
-        <h1>Hej.<br>It's her.</h1>
+  </header>
 
-        <p class="description">
-          Portraits To Empower Women. This is my Mission.
-          Headshots und Personal Branding Fotografie
-          von Anna Alizier.
-        </p>
+  <!-- Eerste scherm -->
+  <main>
 
-        <a href="#portfolio" class="read-button">Read More</a>
+    <section class="hero" id="home">
+
+      <!-- Lege plek voor een foto, later toe te voegen -->
+      <div class="photo-area">
+        <span class="photo-label">Jouw foto komt hier</span>
       </div>
 
-      <a href="#portfolio" class="scroll-arrow">↓</a>
+      <!-- Gekleurde tekstsectie -->
+      <div class="intro-area">
+
+        <div class="intro-content">
+          <h1>Hej.<br>It's her.</h1>
+
+          <p class="intro-text">
+            Portraits To Empower Women. This is my Mission.
+            Headshots und Personal Branding Fotografie von Anna Alizier.
+          </p>
+
+          <a href="#portfolio" class="read-button">Read More</a>
+        </div>
+
+        <a href="#portfolio" class="scroll-down" aria-label="Scroll naar beneden">
+          ↓
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- Vervolg van de website -->
+    <section class="content-section" id="portfolio">
+      <p class="section-label">PORTFOLIO</p>
+      <h2>Every story deserves to be seen.</h2>
+    </section>
+
+    <section class="content-section about-section" id="about">
+      <p class="section-label">ABOUT ME</p>
+      <h2>Nice to meet you.</h2>
+    </section>
+
+    <section class="content-section" id="contact">
+      <p class="section-label">CONTACT</p>
+      <h2>Let's create something beautiful.</h2>
+      <a href="mailto:hello@example.com" class="read-button">
+        Say hello
+      </a>
     </section>
 
   </main>
-
-  <section class="next-section" id="portfolio">
-    <p>MY WORK</p>
-    <h2>Every story deserves to be seen.</h2>
-  </section>
-
-  <section class="next-section about-section" id="about">
-    <p>ABOUT ME</p>
-    <h2>Nice to meet you.</h2>
-  </section>
-
-  <section class="next-section" id="contact">
-    <p>LET'S CONNECT</p>
-    <h2>Let's create something beautiful.</h2>
-    <a href="mailto:hello@example.com" class="read-button">
-      Contact me
-    </a>
-  </section>
 
 </body>
 </html>
