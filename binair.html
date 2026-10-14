@@ -1,0 +1,91 @@
+```html
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Het binaire stelsel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Het binaire stelsel</h1>
+        <p>Computers werken met nullen en enen.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="weer.html">Het weer</a>
+        <a href="kleurmodellen.html">Kleuren</a>
+        <a class="active" href="binair.html">Binair</a>
+        <a href="compressie.html">Compressie</a>
+        <a href="ai.html">AI</a>
+        <a href="penalty.html">Penaltyspel</a>
+        <a href="documentatie.html">Documentatie</a>
+    </nav>
+
+    <main>
+        <section class="card">
+            <h2>Wat is binair?</h2>
+            <p>
+                Het binaire stelsel gebruikt maar twee cijfers: 0 en 1.
+                Computers gebruiken bits om gegevens op te slaan en te
+                verwerken. Acht bits vormen samen één byte.
+            </p>
+
+            <p>
+                Voorbeeld: het decimale getal 13 is binair 1101.
+                Dat komt doordat 8 + 4 + 0 + 1 gelijk is aan 13.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Reken zelf een getal om</h2>
+            <label for="decimaal">Vul een getal van 0 tot 255 in:</label>
+            <input type="number" id="decimaal" min="0" max="255" value="13">
+            <button onclick="omzetten()">Zet om naar binair</button>
+            <h3 id="binairResultaat">Binair: 00001101</h3>
+        </section>
+
+        <section class="card">
+            <h2>Speel een binair spel</h2>
+            <p>Oefen met het omzetten van getallen.</p>
+            <p>
+                <a href="https://www.google.com/search?q=Binary+Bonanza+binary+game"
+                   target="_blank" rel="noopener">
+                    Zoek het spel Binary Bonanza
+                </a>
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Video over binair</h2>
+            <p>
+                <a href="https://www.youtube.com/results?search_query=binaire+stelsel+uitleg"
+                   target="_blank" rel="noopener">
+                    Bekijk uitlegvideo's op YouTube
+                </a>
+            </p>
+        </section>
+    </main>
+
+    <footer>Mijn Wereld — Binair</footer>
+
+    <script>
+        // Zet een decimaal getal om naar een binair getal van acht bits
+        function omzetten() {
+            const getal = Number(document.getElementById("decimaal").value);
+
+            if (!Number.isInteger(getal) || getal < 0 || getal > 255) {
+                alert("Vul een heel getal tussen 0 en 255 in.");
+                return;
+            }
+
+            const binair = getal.toString(2).padStart(8, "0");
+            document.getElementById("binairResultaat").textContent =
+                "Binair: " + binair;
+        }
+    </script>
+</body>
+</html>
+```

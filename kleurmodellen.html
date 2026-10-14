@@ -1,0 +1,70 @@
+```html
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kleurmodellen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kleurmodellen</h1>
+        <p>Leer hoe RGB en hexadecimale kleuren werken.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="weer.html">Het weer</a>
+        <a class="active" href="kleurmodellen.html">Kleuren</a>
+        <a href="binair.html">Binair</a>
+        <a href="compressie.html">Compressie</a>
+        <a href="ai.html">AI</a>
+        <a href="penalty.html">Penaltyspel</a>
+        <a href="documentatie.html">Documentatie</a>
+    </nav>
+
+    <main>
+        <section class="card">
+            <h2>Wat is RGB?</h2>
+            <p>
+                RGB staat voor rood, groen en blauw. Een scherm maakt
+                kleuren door deze drie lichtkleuren te combineren.
+                Iedere waarde loopt van 0 tot en met 255.
+            </p>
+
+            <h2>Wat is hex?</h2>
+            <p>
+                Een hexadecimale kleur gebruikt zes tekens na het
+                #-teken. De eerste twee tekens staan voor rood,
+                de volgende twee voor groen en de laatste twee voor blauw.
+                Bijvoorbeeld: #FF0000 is rood.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Probeer de RGB-naar-hex converter</h2>
+
+            <label for="rood">Rood (0–255)</label>
+            <input id="rood" type="number" min="0" max="255" value="83">
+
+            <label for="groen">Groen (0–255)</label>
+            <input id="groen" type="number" min="0" max="255" value="109">
+
+            <label for="blauw">Blauw (0–255)</label>
+            <input id="blauw" type="number" min="0" max="255" value="254">
+
+            <button onclick="berekenHex()">Bereken kleur</button>
+
+            <h3 id="hexResultaat">Hex: #536DFE</h3>
+            <div id="kleurVoorbeeld"
+                 style="height:150px;background:#536DFE;border-radius:12px;">
+            </div>
+        </section>
+    </main>
+
+    <footer>Mijn Wereld — Kleurmodellen</footer>
+    <script src="colors.js"></script>
+</body>
+</html>
+```

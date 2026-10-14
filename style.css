@@ -1,0 +1,214 @@
+```css
+/* Algemene instellingen voor de hele website */
+:root {
+    --achtergrond: #f3f6fc;
+    --kaart: #ffffff;
+    --tekst: #172033;
+    --accent: #536dfe;
+    --navigatie: #18223a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--achtergrond);
+    color: var(--tekst);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+header {
+    padding: 45px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #536dfe, #8e54e9);
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 12px;
+    background: var(--navigatie);
+}
+
+nav a {
+    padding: 10px 14px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+main {
+    width: min(1100px, 92%);
+    margin: 30px auto;
+}
+
+.hero {
+    padding: 45px 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    background: var(--kaart);
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #17203312;
+}
+
+.card,
+.mini-card {
+    padding: 24px;
+    margin-bottom: 24px;
+    background: var(--kaart);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px #17203312;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.mini-card {
+    margin: 0;
+    border: 1px solid #e0e5f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mini-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #17203320;
+}
+
+a {
+    color: var(--accent);
+}
+
+.button,
+button {
+    display: inline-block;
+    padding: 11px 17px;
+    margin: 5px 3px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.button:hover,
+button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+input,
+select {
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #c7cede;
+    border-radius: 7px;
+    font: inherit;
+}
+
+img,
+iframe,
+canvas {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+    border-radius: 10px;
+}
+
+.video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 12px;
+}
+
+footer {
+    padding: 25px;
+    margin-top: 40px;
+    text-align: center;
+    background: var(--navigatie);
+    color: white;
+}
+
+/* Donker thema */
+body.dark {
+    --achtergrond: #101522;
+    --kaart: #1c2537;
+    --tekst: #f0f3fa;
+    --navigatie: #090d16;
+}
+
+/* Instellingenpaneel */
+.settings {
+    position: fixed;
+    z-index: 10;
+    right: 12px;
+    bottom: 12px;
+    width: min(280px, calc(100% - 24px));
+    padding: 15px;
+    background: var(--kaart);
+    color: var(--tekst);
+    border: 1px solid #aab3c5;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px #0002;
+}
+
+.settings label {
+    display: block;
+    margin-top: 8px;
+}
+
+.settings input {
+    width: 100%;
+}
+
+/* Opmaak voor mobiele telefoons */
+@media (max-width: 650px) {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .hero {
+        padding: 28px 16px;
+    }
+}
+```
