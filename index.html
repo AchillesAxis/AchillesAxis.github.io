@@ -3,129 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achilles | Persoonlijke Website</title>
-    <!-- Google Fonts voor de stijlvolle typografie -->
+    <title>Achilles - Persoonlijke Website</title>
+    
+    <!-- Lettertype importeren voor de mooie koppen -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Algemene instellingen & kleuren */
-        :root {
-            --primary-red: #bd534c;      /* Warme rode kleur uit het voorbeeld */
-            --primary-dark: #a1423c;
-            --bg-light: #f7f5f2;          /* Zachte beige/off-white achtergrond */
-            --text-dark: #1a1a1a;
-            --text-light: #ffffff;
-            --text-muted: #666666;
-            --card-bg: #ffffff;
-        }
-
+        /* Reset en basisinstellingen */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: #faf9f6;
+            color: #2b2b2b;
             line-height: 1.6;
         }
 
-        /* Navigatiebalk */
+        /* Navigatiebalk bovenaan */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 25px 8%;
-            background-color: var(--bg-light);
+            background-color: #ffffff;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: 700;
-            color: var(--primary-red);
+            color: #b84c46;
             text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
             list-style: none;
+            gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: #4a4a4a;
             font-weight: 500;
             font-size: 15px;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--primary-red);
+            color: #b84c46;
         }
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .nav-links .actief {
+            border-bottom: 2px solid #b84c46;
+            padding-bottom: 4px;
         }
 
-        .btn-say-hoi {
-            background-color: #000000;
-            color: var(--text-light);
+        .btn-contact {
+            background-color: #111111;
+            color: white !important;
             padding: 10px 24px;
             border-radius: 30px;
-            text-decoration: none;
             font-weight: 500;
-            font-size: 14px;
-            transition: transform 0.2s, background-color 0.2s;
+            transition: background 0.3s !important;
         }
 
-        .btn-say-hoi:hover {
-            background-color: var(--primary-red);
-            transform: translateY(-2px);
+        .btn-contact:hover {
+            background-color: #333333 !important;
         }
 
-        /* Hero Sectie (Gesplitst scherm) */
+        /* Gesplitste Hero Sectie */
         .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: calc(100vh - 90px);
+            display: flex;
+            min-height: calc(100vh - 85px);
+            width: 100%;
         }
 
-        .hero-image {
-            background-color: #e2ded7;
-            position: relative;
-            overflow: hidden;
+        /* Linkerkant: Afbeelding */
+        .hero-image-container {
+            flex: 1;
+            background-color: #e2dfd8;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Afbeelding of stijlvolle placeholder */
-        .hero-image img {
+        .hero-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .hero-image-placeholder {
+        /* Tijdelijke tekst als er nog geen afbeelding is geladen */
+        .placeholder-tekst {
+            color: #777;
+            font-size: 18px;
             text-align: center;
-            color: #888;
-            padding: 40px;
+            padding: 20px;
         }
 
-        .hero-image-placeholder h3 {
+        /* Rechterkant: Terracotta vak */
+        .hero-content {
+            flex: 1;
+            background-color: #b84c46;
+            color: white;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-        Hier is de volledige HTML- en CSS-code in één bestand (`index.html`), exact vormgegeven volgens de lay-out en stijl van je afbeelding (met een split-screen hero-sectie, terracotta achtergrondkleur, navigatiebalk en jouw gegevens):
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content p.intro {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 450px;
+        }
+
+        /* Afgeronde Knop */
+        .btn-read-more {
+            background-color: white;
+            color: #b84c46;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-Exculpated voor het misverstand net! Hier is jouw volledige HTML-code met precies het design van de afbeelding: een gesplitste layout met navigatiebovenbalk, de warme terracotta rode kleur (`#b8524d`), afgeronde knoppen en een plek voor je afbeelding.
+
+Je kunt deze code direct kopiëren en in je `index.html` bestand plakken op GitHub:
 
 ```html
 <!DOCTYPE html>
@@ -133,141 +156,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achilles | Persoonlijke Website</title>
+    <title>Over Achilles</title>
     <style>
-        /* Reset & Basis Instellingen */
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #fff;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Navigatiebalk */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 8%;
-            background-color: #fff;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #b85d52; /* Terracotta tint uit het voorbeeld */
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a.active, .nav-links a:hover {
-            color: #000;
-            border-bottom: 2px solid #000;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .btn-black {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        .btn-black:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Sectie (Split Screen) */
-        .hero {
-            display: flex;
-            min-height: calc(100vh - 80px);
-            width: 100%;
-        }
-
-        .hero-left {
-            flex: 1;
-            background-color: #f4f1ea; /* Zachte neutrale achtergrond */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-
-        .profile-card {
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .profile-card h3 {
-            color: #b85d52;
-            margin-bottom: 15px;
-        }
-
-        .profile-card p {
-            margin-bottom: 12px;
-            color: #555;
-        }
-
-        .hero-right {
-            flex: 1;
-            background-color: #b85d52; /* Terracotta rode vlak */
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 80px 10%;
-        }
-
-        .hero-right h1 {
-            font-size: 56px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero-right p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 450px;
-        }
-
-        .btn-white {
-            display: inline-block;
-            background-color: #fff;
-            color: #222;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight
+            margin: 0;
+            padding: 0
