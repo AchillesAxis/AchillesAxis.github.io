@@ -1,8 +1,4 @@
 
-/* =========================
-   BASIS
-========================= */
-
 * {
   margin: 0;
   padding: 0;
@@ -16,71 +12,59 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #292321;
-  background: #ffffff;
+  background: #fff;
 }
 
-/* =========================
-   NAVIGATIEBALK
-========================= */
+/* BOVENBALK */
 
 .navbar {
-  width: 100%;
   height: 48px;
-  padding: 0 3.2%;
-  background: #ffffff;
-
+  width: 100%;
+  padding: 0 16px;
+  background: #fff;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-
-  position: relative;
-  z-index: 10;
 }
 
 .logo {
   justify-self: start;
   display: flex;
   flex-direction: column;
-
+  text-decoration: none;
   color: #b25753;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 12px;
-  line-height: 0.75;
-  text-decoration: none;
+  font-size: 10px;
+  line-height: 8px;
 }
 
 .logo strong {
-  font-size: 21px;
-  font-weight: bold;
+  font-size: 20px;
+  line-height: 17px;
 }
 
-.nav-links {
+.navigation {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.nav-links a {
-  color: #3e3936;
+.navigation a {
+  color: #38322f;
+  font-size: 6px;
   text-decoration: none;
-  font-size: 6.5px;
-  padding: 5px 0;
+  white-space: nowrap;
   position: relative;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: #111111;
-}
-
-.nav-links a.active::after {
+.navigation a.active::after {
   content: "";
   position: absolute;
+  height: 1px;
+  background: #38322f;
+  bottom: -4px;
   left: 0;
   right: 0;
-  bottom: 1px;
-  height: 1px;
-  background: #292321;
 }
 
 .nav-right {
@@ -92,273 +76,215 @@ body {
 
 .say-button {
   background: #080706;
-  color: #ffffff;
-  border-radius: 30px;
-  padding: 7px 15px;
+  color: #fff;
   text-decoration: none;
-  font-size: 7px;
+  font-size: 6px;
+  padding: 5px 13px;
+  border-radius: 20px;
   white-space: nowrap;
 }
 
-.say-button:hover {
-  background: #b25753;
+.instagram {
+  width: 10px;
+  height: 10px;
+  color: #24201e;
 }
 
-.social-icon {
-  width: 12px;
-  height: 12px;
-  color: #292321;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-icon svg {
-  width: 12px;
-  height: 12px;
+.instagram svg {
+  display: block;
+  width: 100%;
+  height: 100%;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
 }
 
-/* =========================
-   HOOFDSCHERM
-========================= */
+.instagram .dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* HOOFDSCHERM: TWEE GELIJKE HELFTEN */
 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 252px;
+  width: 100%;
   min-height: calc(100vh - 48px);
 }
 
-/* Linkerkant: lege fotoplaats */
+/* LINKERHELFT: VOORLOPIG ZONDER FOTO */
 
-.photo-area {
-  background-color: #d0ceca;
-
-  /* Zachte tijdelijke achtergrond zonder foto */
-  background-image:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.15),
-      rgba(80, 70, 60, 0.08)
-    );
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.photo-placeholder {
+  background: #c9c7c2;
   min-width: 0;
+  min-height: 0;
 }
 
-.photo-label {
-  color: #77716b;
-  font-size: 11px;
-  letter-spacing: 1px;
-}
+/* RECHTERHELFT */
 
-/* Rechterkant: terracottavlak */
-
-.intro-area {
-  position: relative;
+.intro {
   background: #ad5652;
-  color: #ffffff;
-
+  color: #fff;
+  position: relative;
   display: flex;
   align-items: center;
-
-  padding: 35px 8.5%;
+  padding: 0 21px;
   min-width: 0;
 }
 
 .intro-content {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
+  transform: translateY(2px);
 }
 
-.intro-area h1 {
+.intro h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 4vw, 44px);
-  line-height: 1.3;
-  font-weight: bold;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  margin-bottom: 5px;
 }
 
-.intro-text {
-  max-width: 310px;
-  font-size: 8px;
-  line-height: 1.8;
-  font-weight: normal;
-  margin-bottom: 12px;
+.intro p {
+  font-size: 7px;
+  font-weight: 400;
+  line-height: 1.65;
+  margin-bottom: 11px;
+  max-width: 100%;
 }
 
 .read-button {
-  display: inline-block;
-  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 19px;
+  padding: 0 12px;
+  background: #fff;
   color: #302925;
-
-  padding: 10px 20px;
-  border-radius: 30px;
-
   text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 7px;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
 }
 
 .read-button:hover {
   background: #292321;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* Pijltje onderaan */
-
-.scroll-down {
+.arrow {
   position: absolute;
-  bottom: 12px;
-  left: 8.5%;
-
-  color: #ffffff;
+  left: 21px;
+  bottom: 7px;
+  color: #fff;
   text-decoration: none;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 300;
 }
 
-/* =========================
-   VERVOLGSECTIES
-========================= */
+/* VOLGENDE SECTIES */
 
-.content-section {
+.extra-section {
   min-height: 260px;
-  padding: 75px 8%;
-  text-align: center;
-
+  padding: 70px 8%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-}
-
-.section-label {
-  color: #ad5652;
-  font-size: 10px;
-  letter-spacing: 3px;
-}
-
-.content-section h2 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(25px, 4vw, 42px);
-  font-weight: normal;
 }
 
-.about-section {
-  background: #f1ece6;
+.extra-section:nth-child(odd) {
+  background: #f4eee8;
 }
 
-/* =========================
-   TABLET EN MOBIEL
-========================= */
+/* GROTERE SCHERMEN */
 
-@media (max-width: 700px) {
+@media (min-width: 701px) {
   .navbar {
-    height: 64px;
-    padding: 0 18px;
-    grid-template-columns: auto 1fr auto;
-    gap: 12px;
-  }
-
-  .logo {
-    font-size: 11px;
-  }
-
-  .logo strong {
-    font-size: 19px;
-  }
-
-  .nav-links {
-    justify-self: center;
-    gap: clamp(7px, 2vw, 14px);
-  }
-
-  .nav-links a {
-    font-size: 9px;
-  }
-
-  .say-button {
-    padding: 8px 12px;
-    font-size: 9px;
-  }
-
-  .nav-right {
-    gap: 8px;
-  }
-
-  .social-icon,
-  .social-icon svg {
-    width: 14px;
-    height: 14px;
+    height: 48px;
+    padding-left: 3.2%;
+    padding-right: 3.2%;
   }
 
   .hero {
-    min-height: auto;
-    grid-template-columns: 1fr;
+    min-height: calc(100vh - 48px);
   }
 
-  .photo-area {
-    min-height: 42vh;
+  .intro {
+    padding-left: 8.5%;
+    padding-right: 8.5%;
   }
 
-  .intro-area {
-    min-height: 400px;
-    padding: 55px 9% 70px;
+  .intro h1 {
+    font-size: clamp(24px, 3.2vw, 48px);
   }
 
-  .intro-area h1 {
-    font-size: 44px;
-  }
-
-  .intro-text {
-    font-size: 12px;
-    max-width: 330px;
+  .intro p {
+    font-size: clamp(7px, 0.85vw, 13px);
+    line-height: 1.7;
+    margin-bottom: 12px;
   }
 
   .read-button {
-    font-size: 10px;
-    padding: 12px 22px;
+    min-height: 19px;
+    padding: 0 13px;
+    font-size: 7px;
   }
 
-  .scroll-down {
-    left: 9%;
-    bottom: 18px;
+  .arrow {
+    left: 8.5%;
+    bottom: 7px;
   }
 }
 
-/* Kleine telefoons */
+/* MOBIELE TELEFOONS */
 
 @media (max-width: 380px) {
   .navbar {
-    padding: 0 12px;
-    gap: 7px;
+    padding: 0 9px;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
   }
 
-  .nav-links {
-    gap: 7px;
+  .navigation {
+    justify-self: center;
+    gap: 8px;
   }
 
-  .nav-links a {
-    font-size: 8px;
+  .navigation a {
+    font-size: 6px;
+  }
+
+  .nav-right {
+    gap: 6px;
   }
 
   .say-button {
-    padding: 7px 9px;
-    font-size: 8px;
+    padding: 5px 8px;
   }
 
-  .social-icon {
+  .instagram {
     display: none;
+  }
+
+  .intro {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .intro h1 {
+    font-size: 22px;
+  }
+
+  .intro p {
+    font-size: 7px;
+  }
+
+  .arrow {
+    left: 14px;
   }
 }
