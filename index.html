@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Over Achilles</title>
+    <title>Achilles | Persoonlijke Website</title>
+    <!-- Google Fonts voor de stijlvolle typografie -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Algemene instellingen */
+        /* Algemene instellingen & kleuren */
+        :root {
+            --primary-red: #bd534c;      /* Warme rode kleur uit het voorbeeld */
+            --primary-dark: #a1423c;
+            --bg-light: #f7f5f2;          /* Zachte beige/off-white achtergrond */
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-muted: #666666;
+            --card-bg: #ffffff;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,79 +28,104 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4facfe, #6a5acd);
-            color: white;
-            min-height: 100vh;
-        }
-
-        /* De bovenkant van de website */
-        header {
-            text-align: center;
-            padding: 80px 20px 50px;
-        }
-
-        header h1 {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        header p {
-            font-size: 22px;
-        }
-
-        /* De inhoud van de website */
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        /* Witte informatieblokken */
-        .card {
-            background: white;
-            color: #222;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 25px 0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .card h2 {
-            color: #4b55c5;
-            margin-bottom: 15px;
-        }
-
-        /* De knop bij Over mij */
-        .meer-info-knop {
-            background: #4b55c5;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-
-        .meer-info-knop:hover {
-            background: #343d9b;
-        }
-
-        /* Extra informatie die eerst verborgen is */
-        .extra-info {
-            display: none;
-            background: #f1f3ff;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 15px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        .extra-infoJe HTML-code ziet er al heel goed en netjes gestructureerd uit! Er staat alleen onderaan de code (buiten de `</html>`-tag) nog een los stukje HTML voor je hobby's dat je direct in de code kunt verwerken.
+        /* Navigatiebalk */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background-color: var(--bg-light);
+        }
 
-Hier is de volledige, gecorrigeerde code waarin je hobby's (voetballen, kickboksen en vissen in Griekenland) direct zijn ingevuld op de juiste plek.
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-say-hoi {
+            background-color: #000000;
+            color: var(--text-light);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-say-hoi:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Sectie (Gesplitst scherm) */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: calc(100vh - 90px);
+        }
+
+        .hero-image {
+            background-color: #e2ded7;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Afbeelding of stijlvolle placeholder */
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-image-placeholder {
+            text-align: center;
+            color: #888;
+            padding: 40px;
+        }
+
+        .hero-image-placeholder h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        Hier is de volledige HTML- en CSS-code in één bestand (`index.html`), exact vormgegeven volgens de lay-out en stijl van je afbeelding (met een split-screen hero-sectie, terracotta achtergrondkleur, navigatiebalk en jouw gegevens):
 
 ```html
 <!DOCTYPE html>
@@ -94,252 +133,141 @@ Hier is de volledige, gecorrigeerde code waarin je hobby's (voetballen, kickboks
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Over Achilles</title>
-
+    <title>Achilles | Persoonlijke Website</title>
     <style>
-        /* Algemene instellingen */
+        /* Reset & Basis Instellingen */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4facfe, #6a5acd);
-            color: white;
-            min-height: 100vh;
-        }
-
-        /* De bovenkant van de website */
-        header {
-            text-align: center;
-            padding: 80px 20px 50px;
-        }
-
-        header h1 {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-
-        header p {
-            font-size: 22px;
-        }
-
-        /* De inhoud van de website */
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        /* Witte informatieblokken */
-        .card {
-            background: white;
-            color: #222;
-            border-radius: 20px;
-            padding: 30px;
-            margin: 25px 0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .card h2 {
-            color: #4b55c5;
-            margin-bottom: 15px;
-        }
-
-        /* De knop bij Over mij */
-        .meer-info-knop {
-            background: #4b55c5;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 15px;
-            transition: background 0.3s;
-        }
-
-        .meer-info-knop:hover {
-            background: #343d9b;
-        }
-
-        /* Extra informatie die eerst verborgen is */
-        .extra-info {
-            display: none;
-            background: #f1f3ff;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 15px;
+            background-color: #fff;
+            color: #333;
             line-height: 1.6;
         }
 
-        .extra-info h3 {
-            color: #4b55c5;
-            margin-bottom: 10px;
+        /* Navigatiebalk */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background-color: #fff;
         }
 
-        .extra-info p {
-            margin-bottom: 10px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #b85d52; /* Terracotta tint uit het voorbeeld */
+            text-decoration: none;
         }
 
-        /* De drie informatievakjes */
-        .info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
             gap: 20px;
         }
 
-        .info-box {
-            background: #f1f3ff;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
+        .btn-black {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.3s;
         }
 
-        .info-box h3 {
-            color: #4b55c5;
-            margin-bottom: 10px;
+        .btn-black:hover {
+            opacity: 0.8;
         }
 
-        /* De onderkant van de website */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 15px;
+        /* Hero Sectie (Split Screen) */
+        .hero {
+            display: flex;
+            min-height: calc(100vh - 80px);
+            width: 100%;
         }
 
-        /* Aanpassing voor telefoons */
-        @media (max-width: 700px) {
-            header h1 {
-                font-size: 42px;
-            }
-
-            .info {
-                grid-template-columns: 1fr;
-            }
+        .hero-left {
+            flex: 1;
+            background-color: #f4f1ea; /* Zachte neutrale achtergrond */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
         }
-    </style>
-</head>
 
-<body>
-
-    <!-- Titel en introductie -->
-    <header>
-        <h1>Hoi, ik ben Achilles 👋</h1>
-        <p>Welkom op mijn persoonlijke website!</p>
-    </header>
-
-    <main class="container">
-
-        <!-- Over mij met een klikbare knop -->
-        <section class="card">
-            <h2>Over mij</h2>
-
-            <p>
-                Mijn naam is <strong>Achilles</strong>. Ik ben 15 jaar oud
-                en dit is mijn persoonlijke website. Hier kun je wat
-                informatie over mij vinden.
-            </p>
-
-            <!-- Deze knop toont of verbergt extra informatie -->
-            <button
-                class="meer-info-knop"
-                onclick="toonInfo()"
-                aria-expanded="false"
-                aria-controls="extraInfo"
-                id="infoKnop">
-                Lees meer over mij
-            </button>
-
-            <!-- Dit blok verschijnt als je op de knop klikt -->
-            <div class="extra-info" id="extraInfo">
-                <h3>Meer over Achilles</h3>
-
-                <p>
-                    Ik zit op het Vlietlandcollege en leer hoe ik
-                    websites kan maken met HTML en CSS.
-                </p>
-
-                <p>
-                    <strong>Mijn hobby's:</strong>
-                    Ik houd van voetballen en kickboksen. In de vakantie ga ik graag vissen in Griekenland.
-                </p>
-
-                <p>
-                    <strong>Mijn interesses:</strong>
-                    Hier kun je vertellen wat je leuk vindt.
-                </p>
-
-                <p>
-                    <strong>Mijn toekomst:</strong>
-                    Hier kun je vertellen wat je later wilt worden.
-                </p>
-            </div>
-        </section>
-
-        <!-- Persoonlijke gegevens -->
-        <section class="card">
-            <h2>Mijn informatie</h2>
-
-            <div class="info">
-
-                <div class="info-box">
-                    <h3>Naam</h3>
-                    <p>Achilles</p>
-                </div>
-
-                <div class="info-box">
-                    <h3>Leeftijd</h3>
-                    <p>15 jaar</p>
-                </div>
-
-                <div class="info-box">
-                    <h3>School</h3>
-                    <p>Vlietlandcollege</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Informatie over de website -->
-        <section class="card">
-            <h2>Over deze website</h2>
-
-            <p>
-                Ik heb deze website gemaakt met HTML en CSS.
-                Op deze website vertel ik iets over mezelf en leer ik
-                ondertussen meer over websites maken.
-            </p>
-        </section>
-
-    </main>
-
-    <!-- Onderaan de website -->
-    <footer>
-        © 2026 Achilles - Mijn persoonlijke website
-    </footer>
-
-    <!-- JavaScript maakt de knop interactief -->
-    <script>
-        // Deze functie toont of verbergt de extra informatie.
-        function toonInfo() {
-            const info = document.getElementById("extraInfo");
-            const knop = document.getElementById("infoKnop");
-
-            if (info.style.display === "block") {
-                info.style.display = "none";
-                knop.textContent = "Lees meer over mij";
-                knop.setAttribute("aria-expanded", "false");
-            } else {
-                info.style.display = "block";
-                knop.textContent = "Toon minder";
-                knop.setAttribute("aria-expanded", "true");
-            }
+        .profile-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 100%;
         }
-    </script>
 
-</body>
-</html>
+        .profile-card h3 {
+            color: #b85d52;
+            margin-bottom: 15px;
+        }
+
+        .profile-card p {
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        .hero-right {
+            flex: 1;
+            background-color: #b85d52; /* Terracotta rode vlak */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 10%;
+        }
+
+        .hero-right h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-right p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 450px;
+        }
+
+        .btn-white {
+            display: inline-block;
+            background-color: #fff;
+            color: #222;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight
