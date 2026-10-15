@@ -26,7 +26,12 @@ header {
     padding: 45px 20px;
     text-align: center;
     color: white;
-    background: linear-gradient(135deg, #536dfe, #8e54e9);
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+        url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header h1 {
