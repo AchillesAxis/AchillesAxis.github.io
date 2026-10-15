@@ -1,11 +1,12 @@
 
-/* Algemene instellingen voor de hele website */
+
 :root {
     --achtergrond: #f3f6fc;
     --kaart: #ffffff;
     --tekst: #172033;
-    --accent: #536dfe;
-    --navigatie: #18223a;
+    --accent: #a8e6a1;
+    --groen-donker: #092b18;
+    --groen-hover: #1b5833;
 }
 
 * {
@@ -18,20 +19,21 @@ body {
     background: var(--achtergrond);
     color: var(--tekst);
     line-height: 1.6;
-    transition: background 0.3s, color 0.3s;
 }
 
-/* Header */
+main {
+    width: min(1100px, 92%);
+    margin: 30px auto;
+}
+
+
 header {
     padding: 45px 20px;
     text-align: center;
     color: white;
     background:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-        url("images/banner.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+        url("images/banner.jpg") center / cover no-repeat;
 }
 
 header h1 {
@@ -40,63 +42,57 @@ header h1 {
 }
 
 
-/* Navigatiebalk */
 nav {
-    background: #092b18;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 10px;
     gap: 6px;
+    padding: 10px;
+    background: var(--groen-donker);
 }
 
 nav a {
-    color: #e5f5e9;
-    text-decoration: none;
     padding: 12px 18px;
     border-radius: 8px;
+    color: #e5f5e9;
     font-weight: bold;
+    text-decoration: none;
     transition: background 0.2s, color 0.2s;
 }
 
-/* Als je met je muis over een tab gaat */
 nav a:hover {
-    background: #1b5833;
+    background: var(--groen-hover);
     color: white;
 }
 
-/* De actieve pagina */
 nav a.active {
-    background: #a8e6a1;
-    color: #092b18;
+    background: var(--accent);
+    color: var(--groen-donker);
 }
 
 
-/* Hoofdinhoud */
-main {
-    width: min(1100px, 92%);
-    margin: 30px auto;
-}
-
-/* Introductieblok */
-.hero {
-    padding: 45px 25px;
-    margin-bottom: 25px;
-    text-align: center;
-    background: var(--kaart);
-    border-radius: 18px;
-    box-shadow: 0 5px 20px #17203312;
-}
-
-/* Kaarten */
 .card,
-.mini-card {
-    padding: 24px;
-    margin-bottom: 24px;
+.mini-card,
+.info-blok,
+.binair-intro {
     background: var(--kaart);
     border-radius: 14px;
     box-shadow: 0 5px 20px #17203312;
 }
+
+.card {
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.small {
+    font-size: 0.95rem;
+}
+
 
 .grid {
     display: grid;
@@ -105,6 +101,7 @@ main {
 }
 
 .mini-card {
+    padding: 24px;
     margin: 0;
     border: 1px solid #e0e5f0;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -115,199 +112,26 @@ main {
     box-shadow: 0 10px 25px #17203320;
 }
 
-/* Volledig klikbare kaarten */
-a.card-link {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-
-a.card-link h3 {
-    color: var(--accent);
-}
-
-a.card-link p {
-    color: var(--tekst);
-}
-
-a.card-link span {
-    display: inline-block;
-    margin-top: 8px;
-    color: var(--accent);
-    font-weight: bold;
-}
-
-a.card-link:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 4px;
-}
-
-/* Algemene links */
-a {
-    color: var(--accent);
-}
-
-/* Knoppen */
-.button,
-button {
-    display: inline-block;
-    padding: 11px 17px;
-    margin: 5px 3px;
-    border: none;
-    border-radius: 8px;
-    background: var(--accent);
-    color: white;
-    text-decoration: none;
-    font: inherit;
-    cursor: pointer;
-    transition: opacity 0.2s, transform 0.2s;
-}
-
-.button:hover,
-button:hover {
-    opacity: 0.85;
-    transform: translateY(-2px);
-}
-
-/* Formulierelementen */
-input,
-select {
-    max-width: 100%;
-    padding: 10px;
-    border: 1px solid #c7cede;
-    border-radius: 7px;
-    font: inherit;
-}
-
-/* Afbeeldingen en video's */
-img,
-iframe,
-canvas {
-    max-width: 100%;
-}
-
-img {
-    height: auto;
-    border-radius: 10px;
-}
-
-.video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: 0;
-    border-radius: 12px;
-}
-
-/* Footer */
-footer {
-    padding: 25px;
-    margin-top: 40px;
-    text-align: center;
-    background: var(--navigatie);
-    color: white;
-}
-
-/* Donker thema */
-body.dark {
-    --achtergrond: #101522;
-    --kaart: #1c2537;
-    --tekst: #f0f3fa;
-    --navigatie: #090d16;
-}
-
-/* Instellingenpaneel */
-.settings {
-    position: fixed;
-    z-index: 10;
-    right: 12px;
-    bottom: 12px;
-    width: min(280px, calc(100% - 24px));
-    padding: 15px;
-    background: var(--kaart);
-    color: var(--tekst);
-    border: 1px solid #aab3c5;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px #0002;
-}
-
-.settings label {
-    display: block;
-    margin-top: 8px;
-}
-
-.settings input {
-    width: 100%;
-}
-
-/* Links in het binaire onderdeel */
-#binair h2 a {
-    color: inherit;
-    text-decoration: none;
-}
-
-#binair h2 a:hover {
-    text-decoration: underline;
-}
-
-/* Mobiele telefoons en kleine schermen */
-@media (max-width: 650px) {
-    nav {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-        padding: 12px;
-    }
-
-    nav a {
-        text-align: center;
-        width: 100%;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    main {
-        width: 94%;
-    }
-
-    .hero {
-        padding: 28px 16px;
-    }
-}
-
-/* Blok met afbeelding naast tekst */
 .info-blok {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 24px;
+    grid-template-columns: 100px minmax(0, 1fr);
     align-items: center;
+    gap: 24px;
     padding: 24px;
     margin-bottom: 24px;
-    background: var(--kaart);
-    color: var(--tekst);
-    border-radius: 14px;
-    box-shadow: 0 5px 20px #17203312;
 }
 
-/* Ruimte voor de afbeelding */
-.afbeelding-vak {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background: #e0e5f0;
-    border-radius: 10px;
-    overflow: hidden;
+.stap-nummer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--groen-hover);
 }
 
-/* Afbeelding vult het vak */
-.afbeelding-vak img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Tekst */
 .info-tekst h3 {
     margin-top: 0;
 }
@@ -316,31 +140,13 @@ body.dark {
     margin-bottom: 0;
 }
 
-/* Mobiele weergave */
-@media (max-width: 650px) {
-    .info-blok {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding: 18px;
-    }
-
-    .afbeelding-vak {
-        max-width: 100%;
-    }
-}
-
-/* Uitleg links en het spel rechts */
 .binair-intro {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 24px;
     align-items: stretch;
+    gap: 24px;
     padding: 24px;
     margin-bottom: 24px;
-    background: var(--kaart);
-    color: var(--tekst);
-    border-radius: 14px;
-    box-shadow: 0 5px 20px #17203312;
 }
 
 .binair-tekst h2 {
@@ -355,28 +161,71 @@ body.dark {
     border-radius: 10px;
 }
 
-.binair-spel iframe {
+.binair-spel iframe,
+.video-container iframe {
+    display: block;
     width: 100%;
     height: 100%;
-    border: none;
-    display: block;
+    border: 0;
 }
 
-/* Op mobiel komen tekst en spel onder elkaar */
+.video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+a {
+    color: var(--groen-hover);
+}
+
+footer {
+    padding: 25px;
+    margin-top: 40px;
+    text-align: center;
+    background: var(--groen-donker);
+    color: white;
+}
+
 @media (max-width: 700px) {
-    .binair-intro {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .grid {
         grid-template-columns: 1fr;
     }
 
-    .binair-spel {
-        aspect-ratio: 4 / 3;
+    .card,
+    .info-blok,
+    .binair-intro {
+        padding: 18px;
     }
-}
 
-.stap-nummer {
-    font-family: inherit;
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1;
-    color: #a8e6a1;
+    .info-blok {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stap-nummer {
+        justify-content: flex-start;
+        font-size: 2.5rem;
+    }
+
+    .binair-intro {
+        grid-template-columns: 1fr;
+    }
 }
