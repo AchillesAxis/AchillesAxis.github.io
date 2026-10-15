@@ -23,25 +23,22 @@
   </nav>
 
   <main>
-    <!-- HET WEER -->
-    <section class="card" id="weer">
-      <h2>🌦️ Het weer</h2>
-      <p>
-        Deze pagina haalt weergegevens op via de gratis Open-Meteo API.
-        Een API laat websites informatie uitwisselen.
-      </p>
-
-      <label for="plaats">Plaatsnaam:</label>
-      <input id="plaats" value="Amsterdam">
-      <button id="weerKnop">Bekijk het weer</button>
-
-      <p id="status" role="status">Klik om de weergegevens te laden.</p>
-      <h3 id="temperatuur">Temperatuur: —</h3>
-      <p id="omstandigheden">Gevoelstemperatuur en luchtvochtigheid: —</p>
-      <p id="wind">Windsnelheid: —</p>
-
-      <h3>Temperatuurverwachting</h3>
-      <canvas id="weerGrafiek" height="280"
+    <!-- BINAIR STELSEL -->
+    <section class="card">
+        <h2>Het binaire stelsel</h2>
+        <p>Wat maakt een computer eigenlijk een computer? Bekijk de video en ontdek het.</p>
+    
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/mCq8-xTH7jA"
+                title="How Computers Work: What Makes a Computer, a Computer?"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+    <section>
+    <h3>Temperatuurverwachting</h3> 
+      <canvas id="weerGrafiek" height="280" 
               aria-label="Grafiek van de temperatuurverwachting"></canvas>
       <p class="small">De grafiek toont de temperatuur voor de komende uren.</p>
     </section>

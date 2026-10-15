@@ -276,3 +276,56 @@ body.dark {
         padding: 28px 16px;
     }
 }
+
+/* Blok met afbeelding naast tekst */
+.info-blok {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: center;
+    padding: 24px;
+    margin-bottom: 24px;
+    background: var(--kaart);
+    color: var(--tekst);
+    border-radius: 14px;
+    box-shadow: 0 5px 20px #17203312;
+}
+
+/* Ruimte voor de afbeelding */
+.afbeelding-vak {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #e0e5f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Afbeelding vult het vak */
+.afbeelding-vak img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Tekst */
+.info-tekst h3 {
+    margin-top: 0;
+}
+
+.info-tekst p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobiele weergave */
+@media (max-width: 650px) {
+    .info-blok {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 18px;
+    }
+
+    .afbeelding-vak {
+        max-width: 100%;
+    }
+}

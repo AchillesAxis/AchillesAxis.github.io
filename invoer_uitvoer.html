@@ -23,159 +23,107 @@
 
 
   <main>
-    <!-- HET WEER -->
-    <section class="card" id="weer">
-      <h2>🌦️ Het weer</h2>
-      <p>
-        Deze pagina haalt weergegevens op via de gratis Open-Meteo API.
-        Een API laat websites informatie uitwisselen.
-      </p>
-
-      <label for="plaats">Plaatsnaam:</label>
-      <input id="plaats" value="Amsterdam">
-      <button id="weerKnop">Bekijk het weer</button>
-
-      <p id="status" role="status">Klik om de weergegevens te laden.</p>
-      <h3 id="temperatuur">Temperatuur: —</h3>
-      <p id="omstandigheden">Gevoelstemperatuur en luchtvochtigheid: —</p>
-      <p id="wind">Windsnelheid: —</p>
-
-      <h3>Temperatuurverwachting</h3>
-      <canvas id="weerGrafiek" height="280"
-              aria-label="Grafiek van de temperatuurverwachting"></canvas>
-      <p class="small">De grafiek toont de temperatuur voor de komende uren.</p>
+    <!-- INPUT, VERWERKING, OUTPUT -->
+    <section class="card">
+        <h2>Van jouw klik tot wat er op je scherm gebeurt</h2>
+        <p>Je gebruikt elke dag computers, van je telefoon tot je gameconsole. Maar wat gebeurt er eigenlijk wanneer je op een knop drukt, een game speelt of een video start? Bekijk de video en ontdek wat een computer een computer maakt.</p>
+    
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/mCq8-xTH7jA"
+                title="How Computers Work: What Makes a Computer, a Computer?"
+                allowfullscreen>
+            </iframe>
+        </div>
     </section>
 
-    <!-- RGB EN HEX -->
-    <section class="card" id="kleuren">
-      <h2>🎨 RGB en hexadecimale kleuren</h2>
-      <p>
-        RGB staat voor rood, groen en blauw. Elk kanaal heeft een waarde
-        tussen 0 en 255. Bij hex worden die waarden als zes tekens na een
-        #-teken weergegeven. RGB (255, 0, 0) is bijvoorbeeld hex #FF0000.
-      </p>
-
-      <div class="color-inputs">
-        <label for="rood">Rood (0–255)</label>
-        <input type="number" id="rood" min="0" max="255" value="83">
-
-        <label for="groen">Groen (0–255)</label>
-        <input type="number" id="groen" min="0" max="255" value="109">
-
-        <label for="blauw">Blauw (0–255)</label>
-        <input type="number" id="blauw" min="0" max="255" value="254">
-      </div>
-
-      <button id="kleurKnop">Bereken hexkleur</button>
-      <h3 id="hexResultaat">Hex: #536DFE</h3>
-      <div id="kleurVoorbeeld" class="kleur-voorbeeld"></div>
+    <!-- TEKST EN AFBEELDING 1-->
+    <section class="info-blok">
+        <div class="afbeelding-vak">
+            <!-- Plaats hier later je afbeelding -->
+        </div>
+      
+        <div class="info-tekst">
+            <h3>Input – informatie invoeren</h3>
+            <p class="small">
+                Input is alles wat je aan een computer doorgeeft.
+                Dat kan door te typen op een toetsenbord, te klikken
+                met een muis, je stem te gebruiken of iets te scannen
+                met een camera.
+            </p>
+            <p class="small">
+                <strong>Voorbeeld:</strong> je typt een zoekopdracht in
+                Google. Daarmee geef je de computer informatie om mee
+                te werken.
+            </p>
+        </div>
     </section>
 
-    <!-- BINair -->
-    <section class="card" id="binair">
-      <h2>💻 Het binaire stelsel</h2>
-      <p>
-        Het binaire stelsel gebruikt alleen 0 en 1. Een bit is één binaire
-        waarde en acht bits vormen samen één byte. Het decimale getal 13
-        is bijvoorbeeld 1101 in binair, omdat 8 + 4 + 0 + 1 = 13.
-      </p>
-
-      <label for="decimaal">Getal tussen 0 en 255:</label>
-      <input type="number" id="decimaal" min="0" max="255" value="13">
-      <button id="binairKnop">Zet om naar binair</button>
-      <h3 id="binairResultaat">Binair: 00001101</h3>
-
-      <p>
-        <a href="https://www.google.com/search?q=Binary+Bonanza+binary+game"
-           target="_blank" rel="noopener">Zoek het spel Binary Bonanza</a>
-      </p>
-      <p>
-        <a href="https://www.youtube.com/results?search_query=binaire+stelsel+uitleg"
-           target="_blank" rel="noopener">Bekijk uitlegvideo's over binair</a>
-      </p>
+    <!-- TEKST EN AFBEELDING 2-->
+    <section class="info-blok">
+        <div class="afbeelding-vak">
+            <!-- Plaats hier later je afbeelding -->
+        </div>
+      
+        <div class="info-tekst">
+            <h3>Verwerking – de computer gaat aan het werk</h3>
+            <p class="small">
+                De processor voert instructies uit en verwerkt de informatie 
+                die binnenkomt. Hij gebruikt daarvoor programma's en stappen 
+                die bepalen wat er moet gebeuren.
+            </p>
+            <p class="small">
+                <strong>Voorbeeld:</strong> je speelt een game en beweegt je 
+                personage. De computer berekent waar je personage naartoe 
+                gaat en wat er vervolgens op het scherm moet gebeuren.
+            </p>
+        </div>
     </section>
 
-    <!-- COMPRESSIE -->
-    <section class="card" id="compressie">
-      <h2>🖼️ Compressie: bitmap en vector</h2>
-
-      <div class="grid">
-        <article class="mini-card">
-          <h3>Bitmap</h3>
-          <svg viewBox="0 0 100 100" role="img" aria-label="Voorbeeld van pixels">
-            <rect width="50" height="50" fill="#536dfe"/>
-            <rect x="50" width="50" height="50" fill="#ff6b6b"/>
-            <rect y="50" width="50" height="50" fill="#ffd166"/>
-            <rect x="50" y="50" width="50" height="50" fill="#06d6a0"/>
-          </svg>
-          <p>Een bitmap bestaat uit pixels. Foto's worden vaak als bitmap opgeslagen.</p>
-        </article>
-
-        <article class="mini-card">
-          <h3>Vector</h3>
-          <svg viewBox="0 0 100 100" role="img" aria-label="Voorbeeld van een vectorvorm">
-            <circle cx="50" cy="50" r="43" fill="#536dfe"/>
-            <path d="M50 12 L61 39 L90 39 L67 57 L76 86 L50 69 L24 86 L33 57 L10 39 L39 39 Z"
-                  fill="#ffd166"/>
-          </svg>
-          <p>Een vector bestaat uit vormen en lijnen en blijft scherp bij vergroten.</p>
-        </article>
-      </div>
-
-      <h3>Wat is compressie?</h3>
-      <p>
-        Compressie maakt bestanden kleiner. Verliesvrije compressie bewaart
-        alle oorspronkelijke informatie. Compressie met verlies verwijdert
-        een deel van de informatie om het bestand kleiner te maken.
-      </p>
-      <p>
-        Voor foto's is bitmap vaak handig. Voor logo's en pictogrammen is
-        vector vaak beter omdat je het zonder kwaliteitsverlies kunt vergroten.
-        Ik heb geleerd dat het soort afbeelding bepaalt welk formaat geschikt is.
-      </p>
-      <p>
-        <a href="https://www.youtube.com/results?search_query=bitmap+vector+compressie+uitleg"
-           target="_blank" rel="noopener">Bekijk video's over bitmap, vector en compressie</a>
-      </p>
+    <!-- TEKST EN AFBEELDING 3-->
+    <section class="info-blok">
+        <div class="afbeelding-vak">
+            <!-- Plaats hier later je afbeelding -->
+        </div>
+      
+        <div class="info-tekst">
+            <h3>Opslag – informatie bewaren</h3>
+            <p class="small">
+                Computers moeten informatie ook kunnen bewaren. Bestanden 
+                en foto's kunnen bijvoorbeeld op een SSD worden opgeslagen. 
+                Het werkgeheugen (RAM) houdt tijdelijk gegevens vast die de 
+                computer op dat moment nodig heeft.
+            </p>
+            <p class="small">
+                <strong>Voorbeeld:</strong> je slaat een foto op je telefoon op, 
+                zodat je hem later opnieuw kunt bekijken.
+            </p>
+        </div>
     </section>
 
-    <!-- AI -->
-    <section class="card" id="ai">
-      <h2>🤖 AI en de Samsung Galaxy A56 5G</h2>
-      <p>
-        Kunstmatige intelligentie (AI) is technologie waarmee computers
-        bijvoorbeeld patronen kunnen herkennen, taal kunnen verwerken en
-        informatie kunnen analyseren.
-      </p>
-
-      <h3>Samsung Galaxy A56 5G</h3>
-      <p>
-        Circle to Search kan op ondersteunde apparaten helpen om iets op het
-        scherm te omcirkelen en er informatie over te zoeken. Object Eraser
-        kan op ondersteunde Samsung-apparaten helpen om ongewenste objecten
-        uit foto's te verwijderen. Functies verschillen per toestel en software.
-      </p>
-
-      <img
-        class="product-image"
-        src="https://images.samsung.com/is/image/samsung/p6pim/nl/sm-a566bzadeub/gallery/nl-galaxy-a56-5g-sm-a566-sm-a566bzadeub-545530174"
-        alt="Samsung Galaxy A56 5G"
-        loading="lazy">
-
-      <p>
-        Ik vind AI interessant omdat het mensen kan helpen om informatie
-        te vinden en foto's te bewerken. Pas deze uitleg aan met jouw eigen mening.
-      </p>
-      <p>
-        <a href="https://www.samsung.com/nl/" target="_blank" rel="noopener">
-          Officiële Samsung-website
-        </a>
-      </p>
-      <p>
-        <a href="https://www.youtube.com/results?search_query=Samsung+Galaxy+A56+5G+AI+Circle+to+Search"
-           target="_blank" rel="noopener">Bekijk video's over Samsung en AI</a>
-      </p>
+    <!-- TEKST EN AFBEELDING 4-->
+    <section class="info-blok">
+        <div class="afbeelding-vak">
+            <!-- Plaats hier later je afbeelding -->
+        </div>
+      
+        <div class="info-tekst">
+            <h3>Output – het resultaat zien of horen</h3>
+            <p class="small">
+                Output is wat de computer teruggeeft nadat hij informatie 
+                heeft verwerkt. Dat kan een afbeelding op je scherm zijn, 
+                geluid uit je speakers of een document dat uit de printer 
+                komt.
+            </p>
+            <p class="small">
+                <strong>Voorbeeld:</strong> na je zoekopdracht verschijnen 
+                de zoekresultaten op je scherm.
+            </p>
+        </div>
     </section>
+
+
+  
   </main>
 
   <footer>Mijn Wereld — ICT-onderwerpen</footer>
