@@ -1,81 +1,67 @@
 
-
-:root {
-    --achtergrond: #f3f6fc;
-    --kaart: #ffffff;
-    --tekst: #172033;
-    --accent: #a8e6a1;
-    --groen-donker: #092b18;
-    --groen-hover: #1b5833;
-}
-
-* {
-    box-sizing: border-box;
-}
-
+/* Algemene instellingen */
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--achtergrond);
-    color: var(--tekst);
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fc;
+    color: #172033;
     line-height: 1.6;
 }
 
-main {
-    width: min(1100px, 92%);
-    margin: 30px auto;
-}
-
-
+/* Header met Matrix-achtergrond */
 header {
     padding: 45px 20px;
     text-align: center;
     color: white;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-        url("images/banner.jpg") center / cover no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: 48px;
 }
 
-
+/* Navigatiebalk */
 nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
+    background-color: #092b18;
+    text-align: center;
     padding: 10px;
-    background: var(--groen-donker);
 }
 
 nav a {
+    display: inline-block;
     padding: 12px 18px;
-    border-radius: 8px;
     color: #e5f5e9;
-    font-weight: bold;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s;
+    font-weight: bold;
+    border-radius: 8px;
 }
 
 nav a:hover {
-    background: var(--groen-hover);
+    background-color: #1b5833;
     color: white;
 }
 
 nav a.active {
-    background: var(--accent);
-    color: var(--groen-donker);
+    background-color: #a8e6a1;
+    color: #092b18;
 }
 
+/* Inhoud van de pagina */
+main {
+    max-width: 1100px;
+    width: 92%;
+    margin: 30px auto;
+}
 
+/* Witte blokken */
 .card,
 .mini-card,
 .info-blok,
 .binair-intro {
-    background: var(--kaart);
+    background-color: white;
     border-radius: 14px;
     box-shadow: 0 5px 20px #17203312;
 }
@@ -89,32 +75,25 @@ nav a.active {
     margin-top: 0;
 }
 
-.small {
-    font-size: 0.95rem;
-}
-
-
+/* Blokken op de homepage */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 18px;
 }
 
 .mini-card {
     padding: 24px;
-    margin: 0;
-    border: 1px solid #e0e5f0;
-    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .mini-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px #17203320;
+    background-color: #f5faf5;
 }
 
+/* Input, verwerking, opslag en output */
 .info-blok {
     display: grid;
-    grid-template-columns: 100px minmax(0, 1fr);
+    grid-template-columns: 100px 1fr;
     align-items: center;
     gap: 24px;
     padding: 24px;
@@ -122,14 +101,10 @@ nav a.active {
 }
 
 .stap-nummer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: inherit;
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--groen-hover);
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #1b5833;
 }
 
 .info-tekst h3 {
@@ -140,10 +115,10 @@ nav a.active {
     margin-bottom: 0;
 }
 
+/* Binaire spel */
 .binair-intro {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    align-items: stretch;
     gap: 24px;
     padding: 24px;
     margin-bottom: 24px;
@@ -155,77 +130,43 @@ nav a.active {
 
 .binair-spel {
     width: 100%;
-    min-width: 0;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-radius: 10px;
+    height: 400px;
 }
 
-.binair-spel iframe,
-.video-container iframe {
-    display: block;
+.binair-spel iframe {
     width: 100%;
     height: 100%;
-    border: 0;
+    border: none;
 }
 
+/* Video */
 .video-container {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
     margin-top: 15px;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #000;
 }
 
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+/* Links */
 a {
-    color: var(--groen-hover);
+    color: #1b5833;
 }
 
+/* Footer */
 footer {
     padding: 25px;
     margin-top: 40px;
     text-align: center;
-    background: var(--groen-donker);
+    background-color: #092b18;
     color: white;
-}
-
-@media (max-width: 700px) {
-    nav {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    nav a {
-        width: 100%;
-        text-align: center;
-    }
-
-    main {
-        width: 94%;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .card,
-    .info-blok,
-    .binair-intro {
-        padding: 18px;
-    }
-
-    .info-blok {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .stap-nummer {
-        justify-content: flex-start;
-        font-size: 2.5rem;
-    }
-
-    .binair-intro {
-        grid-template-columns: 1fr;
-    }
 }
