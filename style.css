@@ -39,44 +39,38 @@ header h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-/* Navigatiemenu */
+
+/* Navigatiebalk */
 nav {
+    background: #092b18;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 20px;
-    background: var(--navigatie);
-    box-shadow: 0 4px 12px #17203318;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 6px;
 }
 
-/* Links in het menu */
 nav a {
-    display: inline-block;
-    padding: 10px 18px;
-    color: white;
+    color: #e5f5e9;
     text-decoration: none;
-    font-weight: bold;
+    padding: 12px 18px;
     border-radius: 8px;
-    transition: background 0.2s, transform 0.2s;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
 }
 
-/* Hover en actieve pagina */
+/* Als je met je muis over een tab gaat */
 nav a:hover {
-    background: #35415e;
-    transform: translateY(-2px);
-}
-
-nav a.active {
-    background: var(--accent);
+    background: #1b5833;
     color: white;
 }
 
-nav a:focus-visible {
-    outline: 2px solid white;
-    outline-offset: 3px;
+/* De actieve pagina */
+nav a.active {
+    background: #a8e6a1;
+    color: #092b18;
 }
+
 
 /* Hoofdinhoud */
 main {
