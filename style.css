@@ -372,3 +372,11 @@ body.dark {
         aspect-ratio: 4 / 3;
     }
 }
+
+.stap-nummer {
+    font-family: inherit;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #a8e6a1;
+}
